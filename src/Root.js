@@ -11,13 +11,13 @@ import ThemeWrapper from "./Theme";
 
 function Root({ children }) {
   return (
-    // <Provider store={Store}>
-    <ThemeWrapper>
-      <Router>
-        <Main />
-      </Router>
-    </ThemeWrapper>
-    // </Provider>
+    <Provider store={Store}>
+      <ThemeWrapper>
+        <Router>
+          <Main />
+        </Router>
+      </ThemeWrapper>
+    </Provider>
   );
 }
 

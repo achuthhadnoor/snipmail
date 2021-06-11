@@ -43,7 +43,6 @@ export default class Onboarding extends Component {
         this.setState({ step: 4 });
         e.preventDefault();
     }
-
     GoogleConnect = (e) => {
         /*
             * get/create labels in gmail 
