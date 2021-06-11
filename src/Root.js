@@ -4,6 +4,11 @@ import Store from './Store'
 import Main from "./Pages";
 import ThemeWrapper from "./Theme";
 
+/*
+  * create firebase context
+  * create store
+*/
+
 function Root({ children }) {
   return (
     // <Provider store={Store}>
