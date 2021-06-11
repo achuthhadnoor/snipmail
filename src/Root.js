@@ -2,8 +2,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import Store from './Store'
 import Main from "./Pages";
-import ThemeWrapper from "./Theme";
-
+import './css/global.css'
 /*
   * create firebase context
   * create store
@@ -12,11 +11,9 @@ import ThemeWrapper from "./Theme";
 function Root({ children }) {
   return (
     <Provider store={Store}>
-      <ThemeWrapper>
-        <Router>
-          <Main />
-        </Router>
-      </ThemeWrapper>
+      <Router>
+        <Main />
+      </Router>
     </Provider>
   );
 }

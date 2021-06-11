@@ -5,14 +5,14 @@ const initialState = {
 
 }
 
-const userRefucer = (prvState, { payload, type }) => {
+const userRefucer = (prvState = initialState, { payload, type }) => {
     switch (type) {
         case 'CREATE_USER':
 
             return { ...payload.user }
 
         default:
-            break;
+            return prvState
     }
 }
 
