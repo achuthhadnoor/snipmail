@@ -1,17 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
 
 export default function Home
-    ({ step = 1, form, svg }) {
+    ({ Form, Svg }) {
     return (<>
         <div className="main-container">
-            <div className="container ">
-                {form}
+            <div className="container" >
+                <Form />
             </div>
             <div className="container">
                 <div className="fade">
                     <div className="gol">
-                        {svg}
+                        <Svg />
                     </div>
                 </div>
             </div>
@@ -49,9 +48,15 @@ export default function Home
                 display:flex;
                 align-items:center;
                 justify-content:center;
+                transition:all 150ms cubic-bezier(0.215,0.61,0.355,1);
+            }
+            .fade:hover .gol{
+                transform:scale(1.2);
+                transition:all 150ms cubic-bezier(0.215,0.61,0.355,1);
             }
             .form{
-                
+                display:flex;
+                flex-direction:column;
             }
             h1{
                 font-size:2em; 
