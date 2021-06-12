@@ -1,13 +1,13 @@
-import { Input } from "../../../Components/ui";
+import { Button, Input } from "../../../Components/ui";
 
 const Login = ({ isLoading, email, passwordOne, onChange, verify, back }) => {
 
     return (
-        <div className="flex  min-h-screen">
-            <form onSubmit={verify} className="flex flex-col flex-1 m-4 justify-ceter">
-                <div className="flex flex-col mx-auto justify-center flex-1 align-middle">
-                    <h1 className="text-4xl my-4">Welcome to <span className="text-yellow-500">Snipmail</span></h1>
-                    <p>Takes few seconds to setup!</p>
+        <div className="flex flex-col-reverse sm:flex-row min-h-screen">
+            <form onSubmit={verify} className="flex flex-col flex-1 m-4 justify-ceter max-w-xl">
+                <div className="flex flex-col justify-center flex-1 align-middle">
+                    <h1 className="text-4xl my-4">Welcome back</h1>
+                    {/* <p>Achuth Hadn</p> */}
 
                     <Input
                         name="email"
@@ -29,13 +29,19 @@ const Login = ({ isLoading, email, passwordOne, onChange, verify, back }) => {
                     />
                 </div>
                 <div className="flex flex-row-reverse">
-                    <button type="submit" disabled={passwordOne.length === 0 || isLoading ? true : false} className="px-4 py-2 text-gray-400 border-2 border-gray-400  rounded-lg hover:bg-white hover:border-white">next</button>
+                    <Button
+                        type="submit" disabled={passwordOne.length === 0 || isLoading ? true : false}
+                        value="Next"
+                    />
                     <span className="flex-1" />
-                    <button type="" onClick={back} className="px-4 py-2 text-gray-400 border-2 border-gray-400  rounded-lg hover:bg-white hover:border-white">back</button>
+                    <Button
+                        type="" onClick={back}
+                        value="Back"
+                    />
                 </div>
             </form>
-            <div className="bg-gray-200 m-4 rounded flex-1 justify-center items-center flex">
-                <div className="gol">
+            <div className="sm:bg-gray-200 m-4 rounded-xl flex-1 justify-center items-center flex">
+                <div className="sm:gol">
                     <svg width="300" height="231" viewBox="0 0 300 231" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M79.2938 213.656C76.3125 210.999 74.2313 207.476 73.3501 203.53C73.2938 203.646 73.2188 203.761 73.1626 203.877C73.9876 203.742 74.7188 203.992 75.3001 204.589C75.5438 204.82 75.8813 204.531 75.7501 204.242C73.6688 199.911 72.0188 195.407 70.8188 190.748C70.7063 190.864 70.5938 190.979 70.4813 191.095C71.2875 191.229 71.8875 191.595 72.3938 192.25C72.5625 192.481 72.9563 192.23 72.8625 191.961C71.4188 187.668 70.4625 183.221 69.9938 178.717C69.8813 178.813 69.75 178.909 69.6375 178.986C70.9313 179.352 71.5125 180.68 72.0375 181.835C72.6376 183.183 73.2375 184.55 73.8375 185.916C75.0375 188.688 76.2375 191.48 77.4 194.271C79.7626 199.95 82.0126 205.686 84.1876 211.461C84.3188 211.808 84.8626 211.654 84.7313 211.307C82.4626 205.263 80.0813 199.257 77.6063 193.289C76.3688 190.325 75.1126 187.36 73.8188 184.415C73.2376 183.087 72.7125 181.681 72 180.392C71.4938 179.468 70.8375 178.698 69.8063 178.409C69.6375 178.37 69.4313 178.505 69.45 178.678C69.9188 183.241 70.875 187.745 72.3375 192.076C72.4875 191.98 72.6563 191.884 72.8063 191.788C72.2438 191.075 71.5313 190.633 70.6313 190.498C70.425 190.459 70.2188 190.633 70.2938 190.844C71.5313 195.541 73.2 200.104 75.2813 204.493C75.4313 204.377 75.5813 204.262 75.7313 204.146C74.9813 203.395 74.0625 203.107 73.0313 203.28C72.8813 203.299 72.8063 203.492 72.8438 203.626C73.7625 207.669 75.8813 211.288 78.9376 214.002C79.1813 214.31 79.5751 213.906 79.2938 213.656Z" fill="#E8E8E8" />
                         <path d="M79.3313 197.852C78.9563 196.466 78.6563 195.08 78.4875 193.655C78.3938 192.943 78.3375 192.25 78.3 191.538C78.2813 191.114 78.0563 189.94 78.375 189.593C78.7313 189.555 79.0875 189.516 79.4438 189.478C79.5375 189.632 79.6125 189.805 79.6688 189.978C79.8375 190.363 79.9688 190.748 80.1188 191.133C80.3813 191.788 80.625 192.442 80.8875 193.097C81.4125 194.464 81.9375 195.83 82.4813 197.197C84.5813 202.606 86.6813 207.996 88.7625 213.406C88.8938 213.752 89.4375 213.598 89.3063 213.252C86.6625 206.418 84.0188 199.603 81.3563 192.77C81.0188 191.884 80.6625 190.979 80.325 190.094C80.1375 189.632 79.9875 189.074 79.5938 188.746C79.0125 188.246 78.3 188.515 77.9625 189.151C77.4 190.248 77.7375 191.807 77.8688 192.962C78.0375 194.675 78.375 196.35 78.825 197.986C78.9 198.371 79.4438 198.217 79.3313 197.852Z" fill="#E8E8E8" />

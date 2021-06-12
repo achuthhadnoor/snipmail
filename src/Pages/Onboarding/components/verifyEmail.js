@@ -3,9 +3,9 @@ import { Button, Input } from "../../../Components/ui";
 const VerifyEmail = ({ isLoading, email, onChange, verify }) => {
 
     return (
-        <div className="flex  min-h-screen">
-            <form onSubmit={verify} className="flex flex-col flex-1 m-4 justify-ceter">
-                <div className="flex flex-col mx-auto justify-center flex-1 align-middle">
+        <div className="flex flex-col-reverse sm:flex-row min-h-screen">
+            <form onSubmit={verify} className="flex flex-col flex-1 m-4 justify-ceter max-w-xl">
+                <div className="flex flex-col justify-center flex-1 align-middle">
                     <h1 className="text-4xl my-4 ">Welcome to <span className="text-yellow-600">Snipmail</span></h1>
                     <p className="text-gray-400">Takes few seconds to setup!</p>
                     <Input
@@ -25,8 +25,8 @@ const VerifyEmail = ({ isLoading, email, onChange, verify }) => {
                     />
                 </div>
             </form>
-            <div className="bg-gray-200 m-4 rounded flex-1 justify-center items-center flex">
-                <div className="gol">
+            <div className="sm:bg-gray-200 m-4 rounded-xl flex-1 justify-center items-center flex">
+                <div className="sm:gol">
                     <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M195.781 87.2252C195.814 87.7519 195.83 88.2785 195.863 88.7882C195.863 88.8901 195.929 89.0261 196.043 89.0261C209.847 90.9968 223.765 89.3319 237.618 89.3658C241.536 89.3658 245.437 89.5187 249.339 89.9095C249.437 89.9265 249.552 89.8245 249.568 89.7226C249.7 89.0261 249.847 88.3295 249.978 87.633C250.044 87.3102 249.568 87.1743 249.503 87.497C249.372 88.1936 249.224 88.8901 249.093 89.5867C249.175 89.5187 249.257 89.4678 249.323 89.3998C235.601 88.0067 221.831 89.7566 208.076 89.4508C204.093 89.3658 200.109 89.094 196.158 88.5334C196.224 88.6183 196.273 88.7033 196.339 88.7712C196.306 88.2446 196.289 87.7179 196.257 87.2082C196.257 86.9024 195.765 86.9024 195.781 87.2252Z" fill="#515151" />
                         <path d="M196.191 87.48C210.06 87.48 223.945 87.48 237.814 87.48C241.749 87.48 245.683 87.48 249.618 87.48C249.929 87.48 249.929 86.9703 249.618 86.9703C235.749 86.9703 221.863 86.9703 207.994 86.9703C204.06 86.9703 200.125 86.9703 196.191 86.9703C195.88 86.9703 195.88 87.48 196.191 87.48Z" fill="#515151" />
