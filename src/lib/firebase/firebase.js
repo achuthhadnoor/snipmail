@@ -15,11 +15,11 @@ const config = {
 
 class Firebase {
     constructor() {
-        super();
         app.initializeApp(config);
         this.app = app;
-        this.db = app.database();
-        this.firestore = app.firestore();
+        this.auth = app.auth()
+        // this.db = app.database();
+        // this.firestore = app.firestore();
         this.user = null;
     }
 

@@ -1,0 +1,19 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body,#root{
+    font-family: monospace;
+    @apply min-h-screen text-gray-800 bg-gray-100;
+}
+
+.gol{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:350px;
+    width:350px;
+    background: linear-gradient(146.75deg, #CACACA 13.39%, rgba(255, 255, 255, 0) 86.56%);
+    @apply rounded-full ;
+}

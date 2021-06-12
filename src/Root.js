@@ -1,21 +1,35 @@
-import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
-import Store from './Store'
-import Main from "./Pages";
-import './css/global.css'
+import { useEffect, useState } from "react";
+import { Route, Switch, useHistory } from "react-router";
+import { withFirebase } from "./lib/firebase";
+import Main from "./Pages/Home";
+import Onboarding from "./Pages/Onboarding";
 /*
   * create firebase context
   * create store
 */
 
-function Root({ children }) {
+function Root({ firebase }) {
+  const [user, setUser] = useState(null);
+  const history = useHistory();
+  useEffect(() => {
+    const unsubscribe = firebase.auth.onAuthStateChanged(
+      authUser => {
+        if (authUser) {
+          return setUser(authUser);
+        }
+        setUser(null)
+        return history.push('/onboard')
+      },
+    );
+    return () => unsubscribe();
+  }, [history, firebase.auth])
+  // <Main user={user} />
   return (
-    <Provider store={Store}>
-      <Router>
-        <Main />
-      </Router>
-    </Provider>
+    <Switch>
+      <Route path="/" component={Main} exact />
+      <Route path="/onboard" component={Onboarding} />
+    </Switch>
   );
 }
 
-export default Root;
+export default withFirebase(Root);
